@@ -16,6 +16,7 @@ Participants = ['P' + str(iP) for iP in range(1, 17)] # Define Participants usin
 Muscles = ['Dent1', 'TrapInf', 'Bi', 'Tri', 'Dent2', 'Dent3', 'Dent4', 'DeltA', 'DeltM',
            'DeltP', 'TrapSup', 'TrapMed']
 
+# start the loop for participants from 18 to 24
 for iP in range(18, 25):
     # Import .c3d raw file
     c3d = ezc3d.c3d('J:/IRSST_Fatigue/Pointage_repetitif/Data/' + Participants[iP] + '/Trial/Pointage.c3d')
