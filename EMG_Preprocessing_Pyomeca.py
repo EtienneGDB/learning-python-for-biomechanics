@@ -86,4 +86,11 @@ for iP in range(len(Participants)):
         fft_EMGBL[iM].plot.line(x="freq")
         plt.title(Muscles[iM])
 
-    plt.show()
+    # plt.show()
+
+    # Store the filtered data into a dictionnary and save as .mat file
+    data_to_keep = EMGBL.data
+    EMG_filtered = {x:list(y) for x,y in zip(Muscles, zip(*data_to_keep.transpose()))}
+    sio.savemat("J:/IRSST_Fatigue/Pointage_repetitif/EMG_Pointage_Python/" + Participants[iP] + "_filtered.mat", EMG_filtered)
+
+# EMGBL.meca.to_matlab(filename="J:/IRSST_Fatigue/Pointage_repetitif/EMG_Pointage_Python/" + Participants[iP] + "_filtered.mat")
